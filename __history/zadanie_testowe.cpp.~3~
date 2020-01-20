@@ -1,0 +1,26 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "zadanie_testowe.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+
+	String SQLStmt = "select DOKUMENTY.ID_DOKUMENTU,  DOKUMENTY.DATA_KSIEGOWANIA, sum(POZYCJE.Kwota) from DOKUMENTY full outer join POZYCJE on DOKUMENTY.ID_DOKUMENTU=POZYCJE.ID_DOKUMENTU group by DOKUMENTY.ID_DOKUMENTU,  DOKUMENTY.DATA_KSIEGOWANIA order by DOKUMENTY.ID_DOKUMENTU;" ;
+	String SQLStmt2="select * from POZYCJE";
+
+	SQLDataSet1->CommandText = SQLStmt;
+	SQLDataSet2->CommandText = SQLStmt2;
+	ClientDataSet1->Open();
+	ClientDataSet2->Open();
+}
+//---------------------------------------------------------------------------
+
+
