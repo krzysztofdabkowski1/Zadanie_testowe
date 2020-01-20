@@ -95,9 +95,7 @@ object Form1: TForm1
       'VendorLib=fbclient.dll'
       'VendorLibWin64=fbclient.dll'
       'VendorLibOsx=/Library/Frameworks/Firebird.framework/Firebird'
-      
-        'Database=C:\Users\Asus\Desktop\proba\zadanie_testowe\Zadanie_tes' +
-        'towe\baza.fdb'
+      'Database=C:\Users\Asus\Desktop\zadanie_testowe\zadanie.fdb'
       'User_Name=sysdba'
       'Password=masterkey'
       'Role=RoleName'
@@ -113,6 +111,7 @@ object Form1: TForm1
       'RoleName=RoleName'
       'ServerCharSet='
       'Trim Char=False')
+    Connected = True
     Left = 192
     Top = 80
   end

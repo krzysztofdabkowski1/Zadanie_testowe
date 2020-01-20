@@ -338,7 +338,7 @@
   c:\program\ files\ (x86)\embarcadero\studio\20.0\include\windows\vcl\Vcl.ExtCtrls.hpp \
   c:\program\ files\ (x86)\embarcadero\studio\20.0\include\windows\vcl\Vcl.ListActns.hpp \
   zadanie_testowe.cpp \
-  C:\Users\Asus\Desktop\zadanie_testowe/zadanie_testowe.h \
+  C:\Users\Asus\Desktop\proba\zadanie_testowe\Zadanie_testowe/zadanie_testowe.h \
   c:\program\ files\ (x86)\embarcadero\studio\20.0\include\windows\rtl\DBXDataExpressMetaDataProvider.hpp \
   c:\program\ files\ (x86)\embarcadero\studio\20.0\include\windows\rtl\Data.DBXDataExpressMetaDataProvider.hpp \
   c:\program\ files\ (x86)\embarcadero\studio\20.0\include\windows\rtl\Data.DBXCommon.hpp \
@@ -383,4 +383,6 @@
   c:\program\ files\ (x86)\embarcadero\studio\20.0\include\windows\rtl\System.StrUtils.hpp \
   c:\program\ files\ (x86)\embarcadero\studio\20.0\include\windows\rtl\Datasnap.Midas.hpp \
   c:\program\ files\ (x86)\embarcadero\studio\20.0\include\windows\rtl\Datasnap.Provider.hpp \
-  c:\program\ files\ (x86)\embarcadero\studio\20.0\include\windows\rtl\Data.SqlExpr.hpp
+  c:\program\ files\ (x86)\embarcadero\studio\20.0\include\windows\rtl\Data.SqlExpr.hpp \
+  c:\program\ files\ (x86)\embarcadero\studio\20.0\include\dinkumware64\list \
+  c:\program\ files\ (x86)\embarcadero\studio\20.0\include\dinkumware64\xmemory

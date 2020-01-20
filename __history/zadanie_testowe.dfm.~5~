@@ -95,9 +95,7 @@ object Form1: TForm1
       'VendorLib=fbclient.dll'
       'VendorLibWin64=fbclient.dll'
       'VendorLibOsx=/Library/Frameworks/Firebird.framework/Firebird'
-      
-        'Database=C:\Users\Asus\Desktop\proba\zadanie_testowe\Zadanie_tes' +
-        'towe\baza.fdb'
+      'Database=C:\Users\Asus\Desktop\zadanie_testowe\zadanie.fdb'
       'User_Name=sysdba'
       'Password=masterkey'
       'Role=RoleName'
@@ -113,6 +111,7 @@ object Form1: TForm1
       'RoleName=RoleName'
       'ServerCharSet='
       'Trim Char=False')
+    Connected = True
     Left = 192
     Top = 80
   end
@@ -143,10 +142,56 @@ object Form1: TForm1
     Left = 184
     Top = 304
   end
+  object SQLConnection2: TSQLConnection
+    ConnectionName = 'dokumenty'
+    DriverName = 'Firebird'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverName=Firebird'
+      'DriverUnit=Data.DBXFirebird'
+      
+        'DriverPackageLoader=TDBXDynalinkDriverLoader,DbxCommonDriver260.' +
+        'bpl'
+      
+        'DriverAssemblyLoader=Borland.Data.TDBXDynalinkDriverLoader,Borla' +
+        'nd.Data.DbxCommonDriver,Version=24.0.0.0,Culture=neutral,PublicK' +
+        'eyToken=91d62ebb5b0d1b1b'
+      
+        'MetaDataPackageLoader=TDBXFirebirdMetaDataCommandFactory,DbxFire' +
+        'birdDriver260.bpl'
+      
+        'MetaDataAssemblyLoader=Borland.Data.TDBXFirebirdMetaDataCommandF' +
+        'actory,Borland.Data.DbxFirebirdDriver,Version=24.0.0.0,Culture=n' +
+        'eutral,PublicKeyToken=91d62ebb5b0d1b1b'
+      'LibraryName=dbxfb.dll'
+      'LibraryNameOsx=libsqlfb.dylib'
+      'VendorLib=fbclient.dll'
+      'VendorLibWin64=fbclient.dll'
+      'VendorLibOsx=/Library/Frameworks/Firebird.framework/Firebird'
+      'Database=C:\Users\Asus\Desktop\zadanie_testowe\zadanie.fdb'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'Role=RoleName'
+      'MaxBlobSize=-1'
+      'LocaleCode=0000'
+      'IsolationLevel=ReadCommitted'
+      'SQLDialect=3'
+      'CommitRetain=False'
+      'WaitOnLocks=True'
+      'TrimChar=False'
+      'BlobSize=-1'
+      'ErrorResourceFile='
+      'RoleName=RoleName'
+      'ServerCharSet='
+      'Trim Char=False')
+    Connected = True
+    Left = 552
+    Top = 96
+  end
   object SQLDataSet2: TSQLDataSet
     MaxBlobSize = -1
     Params = <>
-    SQLConnection = SQLConnection1
+    SQLConnection = SQLConnection2
     Left = 560
     Top = 168
   end
@@ -166,31 +211,5 @@ object Form1: TForm1
     DataSet = ClientDataSet2
     Left = 560
     Top = 360
-  end
-  object SQLDataSet3: TSQLDataSet
-    DataSource = DataSource3
-    MaxBlobSize = -1
-    Params = <>
-    SQLConnection = SQLConnection1
-    Left = 80
-    Top = 160
-  end
-  object DataSetProvider3: TDataSetProvider
-    DataSet = SQLDataSet3
-    Left = 72
-    Top = 224
-  end
-  object ClientDataSet3: TClientDataSet
-    Aggregates = <>
-    Params = <>
-    ProviderName = 'DataSetProvider3'
-    ReadOnly = True
-    Left = 64
-    Top = 288
-  end
-  object DataSource3: TDataSource
-    DataSet = ClientDataSet3
-    Left = 56
-    Top = 352
   end
 end

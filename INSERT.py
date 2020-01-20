@@ -5,7 +5,7 @@ import time
 import os
 import sys
 
-iterations=100
+iterations=1000
 
 def strTimeProp(start, end, format):
     stime = time.mktime(time.strptime(start, format))
@@ -18,7 +18,7 @@ def randomDate(start, end):
     return strTimeProp(start, end, '%Y/%m/%d')
 
 
-con = fdb.connect(dsn=os.path.join(sys.path[0])+'/ZADANIE.FDB', user='SYSDBA', password='masterkey')
+con = fdb.connect(dsn=os.path.join(sys.path[0])+'/BAZA.FDB', user='SYSDBA', password='masterkey')
 cur = con.cursor()
 
 # wypełnienie tabeli DOKUMENTY
