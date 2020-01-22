@@ -14,13 +14,6 @@ object Form1: TForm1
   Position = poDesigned
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 504
-    Top = 384
-    Width = 118
-    Height = 13
-    Caption = 'Ilo'#347#263' wierszy'
-  end
   object DBNavigator1: TDBNavigator
     Left = 0
     Top = 8
@@ -68,30 +61,13 @@ object Form1: TForm1
     TabOrder = 3
   end
   object CheckBox1: TCheckBox
-    Left = 267
-    Top = 344
+    Left = 296
+    Top = 319
     Width = 105
     Height = 26
     Caption = 'Podsumowanie'
     TabOrder = 4
     OnClick = CheckBox1Click
-  end
-  object Button1: TButton
-    Left = 628
-    Top = 336
-    Width = 129
-    Height = 25
-    Caption = 'Za'#322'aduj losowe dane'
-    TabOrder = 5
-    OnClick = Button1Click
-  end
-  object Edit1: TEdit
-    Left = 628
-    Top = 377
-    Width = 129
-    Height = 21
-    NumbersOnly = True
-    TabOrder = 6
   end
   object SQLConnection1: TSQLConnection
     ConnectionName = 'dokumenty'
@@ -137,7 +113,6 @@ object Form1: TForm1
       'RoleName=RoleName'
       'ServerCharSet='
       'Trim Char=False')
-    Connected = True
     Left = 192
     Top = 80
   end
@@ -172,25 +147,25 @@ object Form1: TForm1
     MaxBlobSize = -1
     Params = <>
     SQLConnection = SQLConnection1
-    Left = 568
-    Top = 120
+    Left = 560
+    Top = 168
   end
   object DataSetProvider2: TDataSetProvider
     DataSet = SQLDataSet2
-    Left = 560
-    Top = 184
+    Left = 552
+    Top = 232
   end
   object ClientDataSet2: TClientDataSet
     Aggregates = <>
     Params = <>
     ProviderName = 'DataSetProvider2'
     Left = 560
-    Top = 240
+    Top = 296
   end
   object DataSource2: TDataSource
     DataSet = ClientDataSet2
     Left = 560
-    Top = 304
+    Top = 360
   end
   object SQLDataSet3: TSQLDataSet
     DataSource = DataSource3
@@ -217,25 +192,5 @@ object Form1: TForm1
     DataSet = ClientDataSet3
     Left = 56
     Top = 352
-  end
-  object SQLStoredProc1: TSQLStoredProc
-    MaxBlobSize = -1
-    Params = <
-      item
-        DataType = ftInteger
-        Precision = 4
-        Name = 'ITERATIONS'
-        ParamType = ptInput
-        Value = 0
-      end>
-    SQLConnection = SQLConnection1
-    StoredProcName = 'FILL_DATABASE'
-    Left = 416
-    Top = 160
-  end
-  object DataSource4: TDataSource
-    DataSet = SQLStoredProc1
-    Left = 424
-    Top = 240
   end
 end

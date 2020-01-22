@@ -78,16 +78,3 @@ void __fastcall TForm1::DBGrid1CellClick(TColumn *Column)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Button1Click(TObject *Sender)
-{
-	if(Edit1->Text>0){
-		SQLStoredProc1->Prepared=true;
-		SQLStoredProc1->ParamByName("ITERATIONS")->AsInteger=StrToInt(Edit1->Text);
-		SQLStoredProc1->ExecProc();
-	}
-   else{
-		Label1->Caption="Podaj dodatni¹ liczbê!";
-	}
-}
-//---------------------------------------------------------------------------
-
