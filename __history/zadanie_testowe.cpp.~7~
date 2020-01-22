@@ -13,12 +13,11 @@ TForm1 *Form1;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-	//SQL statements fetched as procedures
-	String SQLStmt="select * from select_dokumenty";
+	String SQLStmt="select * from dokumenty";
 	//String SQLStmt = "select DOKUMENTY.ID_DOKUMENTU,  DOKUMENTY.DATA_KSIEGOWANIA, sum(POZYCJE.Kwota) from DOKUMENTY full outer join POZYCJE on DOKUMENTY.ID_DOKUMENTU=POZYCJE.ID_DOKUMENTU group by DOKUMENTY.ID_DOKUMENTU,  DOKUMENTY.DATA_KSIEGOWANIA order by DOKUMENTY.ID_DOKUMENTU;" ;
 	//String SQLStmt = "select DOKUMENTY.ID_DOKUMENTU,  DOKUMENTY.DATA_KSIEGOWANIA, sum(POZYCJE.Kwota) from DOKUMENTY, POZYCJE where DOKUMENTY.ID_DOKUMENTU=POZYCJE.ID_DOKUMENTU group by DOKUMENTY.ID_DOKUMENTU,  DOKUMENTY.DATA_KSIEGOWANIA;" ;
-	String SQLStmt2="select * from select_pozycje";
-	String SQLStmt3 = "select * from select_podsumowanie;" ;
+	String SQLStmt2="select * from POZYCJE";
+	String SQLStmt3 = "select DOKUMENTY.ID_DOKUMENTU,  DOKUMENTY.DATA_KSIEGOWANIA, sum(POZYCJE.Kwota) AS WARTOSC_DOKUMENTU from DOKUMENTY full outer join POZYCJE on DOKUMENTY.ID_DOKUMENTU=POZYCJE.ID_DOKUMENTU group by DOKUMENTY.ID_DOKUMENTU,  DOKUMENTY.DATA_KSIEGOWANIA order by DOKUMENTY.ID_DOKUMENTU;" ;
 
 
 
@@ -42,7 +41,7 @@ void __fastcall TForm1::CheckBox1Click(TObject *Sender)
 	if(CheckBox1->Checked){
 		DBGrid1->DataSource=DataSource3;
 		DBNavigator1->DataSource=DataSource3;
-		//ClientDataSet1->Close();
+		ClientDataSet1->Close();
 
 	}
 	else{
@@ -50,7 +49,7 @@ void __fastcall TForm1::CheckBox1Click(TObject *Sender)
 
 		DBGrid1->DataSource=DataSource1;
 		DBNavigator1->DataSource=DataSource1;
-		SQLStmt="select * from select_pozycje;";
+        SQLStmt="select * from POZYCJE;";
 		SQLDataSet2->CommandText = SQLStmt;
 		if (ClientDataSet2->Active)
 			ClientDataSet2->Close();
@@ -85,14 +84,9 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 		SQLStoredProc1->Prepared=true;
 		SQLStoredProc1->ParamByName("ITERATIONS")->AsInteger=StrToInt(Edit1->Text);
 		SQLStoredProc1->ExecProc();
-		Edit1->Text="";
-		ClientDataSet1->Refresh();
-		ClientDataSet2->Refresh();
-		ClientDataSet3->Refresh();
 	}
    else{
-        Beep();
-		Label1->Caption="Wpisz liczbê!";
+		Label1->Caption="Podaj dodatni¹ liczbê!";
 	}
 }
 //---------------------------------------------------------------------------
